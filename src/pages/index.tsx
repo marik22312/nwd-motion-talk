@@ -9,18 +9,28 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 0.75,
-        }}
-      >
-        <main>
-			<Link href="/slide1">Go To Slide 1</Link>
-		</main>
-      </motion.div>
-    </>
+    <motion.div
+    style={{
+      position: 'absolute'
+    }}
+      initial={{ top: 0 }}
+      exit={{top: -100 }}
+      transition={{
+        duration: 0.75,
+      }}
+    >
+      <div>
+        <div>
+          
+        <div>
+          <h1>Better UX with animated UI</h1>
+        </div>
+        <h2>The tale of the animated page transition</h2>
+        </div>
+        <div>
+          <Link href="/slide1">Next</Link>
+        </div>
+      </div>
+    </motion.div>
   );
 }
