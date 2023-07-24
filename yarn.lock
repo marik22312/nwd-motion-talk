@@ -476,6 +476,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rwh/keystrokes@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@rwh/keystrokes@npm:1.1.1"
+  checksum: 3c121c7f620910f484ebd0479b4035edee39a2c8375849ee2cfd74470832c7b011d41767d502ca3dccce92a2a5cc9a4e884a4dad5fe2b546a88cf411c1239e76
+  languageName: node
+  linkType: hard
+
 "@swc/helpers@npm:0.5.1":
   version: 0.5.1
   resolution: "@swc/helpers@npm:0.5.1"
@@ -2585,6 +2592,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nwd-motion-talk@workspace:."
   dependencies:
+    "@rwh/keystrokes": ^1.1.1
     "@types/node": 20.4.1
     "@types/react": 18.2.14
     "@types/react-dom": 18.2.6
