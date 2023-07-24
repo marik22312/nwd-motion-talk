@@ -43,6 +43,7 @@ const SlideOne: React.FC = () => {
         <h2>Senior Software Developer @ Melio</h2>
       </motion.div>
       <motion.div
+      initial={{opacity: 0}}
         animate={{
           opacity: 1
         }}
@@ -55,21 +56,24 @@ const SlideOne: React.FC = () => {
       >
         <StyledImage src={MyImage} alt="me" />
       </motion.div>
-      <motion.div animate={{
+      <motion.div
+      initial={{opacity: 0}} animate={{
         opacity: jobOpacity
       }}>
         <AbsoluteDiv top="250px" left="150px" width="300px">
           <StyledImage src={MelioImage} alt="melio" />
         </AbsoluteDiv>
       </motion.div>
-      <motion.div animate={{
+      <motion.div
+      initial={{opacity: 0}} animate={{
         opacity: radioOpacity
       }}>
         <AbsoluteDiv top="400px" left="150px" width="300px">
           <StyledImage src={RadiosavtaLogo} alt="radiosavta" />
         </AbsoluteDiv>
       </motion.div>
-      <motion.div animate={{
+      <motion.div
+      initial={{opacity: 0}} animate={{
         opacity: dogOpacity
       }}>
         <AbsoluteDiv top={'260px'} left="700px" width="400px">

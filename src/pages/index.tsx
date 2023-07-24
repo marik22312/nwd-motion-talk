@@ -1,15 +1,25 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { motion } from "framer-motion";
 import Link from 'next/link';
+import { use } from "react";
+import { useRouter } from "next/router";
+import { useKeyboardNavigation } from "@/hooks/useKeyboardNavigation";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Roboto({subsets: ['latin'], weight: '400'});
 
 export default function Home() {
+  const router = useRouter();
+  useKeyboardNavigation({
+    steps: [
+      () => router.push('/slide1'),
+    ]
+  });
   return (
     <motion.div
+    className={inter.className}
     style={{
       position: 'absolute'
     }}
