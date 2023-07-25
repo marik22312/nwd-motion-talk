@@ -7,7 +7,7 @@ const SlideTwo = () => {
     const router = useRouter();
     useKeyboardNavigation({
         steps: [
-            () => router.push('/slide3'),
+            () => router.push('/learn'),
         ]
     });
     return (

@@ -40,7 +40,7 @@ const SlideOne: React.FC = () => {
         left: '150px',
       }}>
         <h1>Hi! I'm Marik</h1>
-        <h2>Senior Software Developer @ Melio</h2>
+        <motion.h2 animate={{opacity: jobOpacity}}>Senior Software Developer @ Melio</motion.h2>
       </motion.div>
       <motion.div
       initial={{opacity: 0}}

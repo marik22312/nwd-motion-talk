@@ -1,8 +1,13 @@
 import {bindKey, unbindKey} from '@rwh/keystrokes';
 import { useEffect, useState } from 'react';
 
+type StepFunction = () => void;
+
 interface KeyboardNavigationArgs {
-    steps: Function[];
+    steps: StepFunction[] | {
+        next: StepFunction;
+        prev: StepFunction;
+    }[];
     onEnd?: Function;
 }
 export const useKeyboardNavigation = (args: KeyboardNavigationArgs) => {
@@ -10,11 +15,16 @@ export const useKeyboardNavigation = (args: KeyboardNavigationArgs) => {
     useEffect(() => {
         const next = () => {
             if(currentStep < args.steps.length) {
-                args.steps[currentStep]();
-                setCurrentStep(s => s + 1);
+                if (typeof args.steps[currentStep] === 'function') {
+                    (args.steps[currentStep] as StepFunction)();
+                } else {
+                    (args.steps[currentStep] as any).next();
+                }
+                
             } else {
                 args.onEnd && args.onEnd();
             }
+            setCurrentStep(s => s + 1);
         }
         bindKey('arrowRight', () => next());
         bindKey('arrowLeft', () => console.log('left'));
@@ -24,4 +34,8 @@ export const useKeyboardNavigation = (args: KeyboardNavigationArgs) => {
             unbindKey('arrowLeft');
         }
     },[currentStep]);
+
+    return {
+        currentStep
+    }
 };
