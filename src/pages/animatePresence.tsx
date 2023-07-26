@@ -13,9 +13,22 @@ export const AnimatePresenceSlide: React.FC = () => {
     })
     return (
         <div>
+            <div>
             <h1>AnimatePresence</h1>
+            </div>
+            <div style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'space-between',
+            }}>
+                <div>
+                    Codeblock
+                </div>
+                <div>
             <button onClick={() => setIsVisible(current => !current)}>{isVisible ? 'Hide' : 'Show'} element</button>
             <MyComponent isVisible={isVisible} />
+                </div>
+            </div>
         </div>
     )
 }
