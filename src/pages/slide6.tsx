@@ -8,7 +8,7 @@ const SlideSix = () => {
     const router = useRouter()
     useKeyboardStepper({
         steps: 0,
-        onEnd: () => router.push('/animatePresence'),
+        onEnd: () => router.push('/keyframes'),
         onBack: () => router.push('/slide5'),
     })
     return (
