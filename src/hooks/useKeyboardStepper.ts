@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 
 interface KeyboardNavigationArgs {
     steps?: number;
-    onEnd?: Function;
+    onEnd?: () => void;
+    onBack?: () => void;
 }
 export const useKeyboardStepper = (args?: KeyboardNavigationArgs) => {
     const [currentStep, setCurrentStep] = useState(0);
@@ -25,6 +26,7 @@ export const useKeyboardStepper = (args?: KeyboardNavigationArgs) => {
             if(currentStep > 0) {
                 return setCurrentStep(s => s - 1);
             }
+            return args?.onBack?.();
 
         }
         bindKey('arrowRight', next);

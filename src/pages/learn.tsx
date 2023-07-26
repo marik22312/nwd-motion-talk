@@ -25,12 +25,14 @@ const SlideTwo = () => {
         >
 
             <div style={styles.row}>
-                <div style={{...styles.cell, backgroundColor: '#223344'}}>1</div>
-                <div style={{...styles.cell, backgroundColor: '#334455'}}>2</div>
+                <div style={{...styles.cell, backgroundColor: '#223344'}}>
+                    <h2>What are animations</h2>
+                </div>
+                <div style={{...styles.cell, backgroundColor: '#334455'}}><h2>Types of animations</h2></div>
             </div>
             <div style={styles.row}>
-                <div style={{...styles.cell, backgroundColor: '#445566'}}>3</div>
-                <div style={{...styles.cell, backgroundColor: '#123'}}>4</div>
+                <div style={{...styles.cell, backgroundColor: '#445566'}}><h2>Introduction to UI animations with Framer.motion</h2></div>
+                <div style={{...styles.cell, backgroundColor: '#123'}}><h2>Suprising implementation demo</h2></div>
             </div>
         </motion.div>
     )
@@ -48,6 +50,9 @@ const styles = {
     cell: {
         height: '100%',
         width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 }
 

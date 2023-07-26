@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import { CodeBlock } from "react-code-blocks";
 import { motion } from 'framer-motion'
+import {useKeyboardStepper} from "@/hooks/useKeyboardStepper";
+import {useRouter} from "next/router";
 
 const SlideSix = () => {
+    const router = useRouter()
+    useKeyboardStepper({
+        steps: 1,
+        onEnd: () => router.push('/animatePresence'),
+        onBack: () => router.push('/slide5'),
+    })
   return (
     <div>
-      <h1>enter framer!</h1>
+      <h1>Enter framer!</h1>
       <p>A powerful React animations librar, from Framer</p>
       <div style={{
         display: 'flex',

@@ -1,6 +1,5 @@
-import React, { PropsWithChildren, use, useState } from "react";
+import React, { useState } from "react";
 import { motion } from 'framer-motion';
-import Image, { StaticImageData } from 'next/image'
 import MyImage from '../assets/images/marik.jpg'
 import MelioImage from '../assets/images/melio.png'
 import LycheeImage from '../assets/images/lychee.jpeg'

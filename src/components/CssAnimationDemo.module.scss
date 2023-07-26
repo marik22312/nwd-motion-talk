@@ -1,0 +1,26 @@
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    rotate: 180deg;
+    opacity: 1;
+  }
+  75% {
+    rotate: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.box {
+  height: 100px;
+  width:100px;
+  margin: 50px auto 0;
+  background-color: #e16971;
+  animation: opacity 3s infinite;
+}
