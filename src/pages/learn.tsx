@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import { useKeyboardNavigation } from '@/hooks/useKeyboardNavigation';
 import { useRouter } from 'next/router';
@@ -14,7 +14,7 @@ const SlideTwo = () => {
         <motion.div
             style={{
                 height: '100vh',
-                display: 'flex',
+                display: 'flex', 
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -23,6 +23,9 @@ const SlideTwo = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
         >
+            <div style={{...styles.row, justifyContent: 'center', alignItems: 'center'}}>
+                <h1>We Will learn <span>(briefly)</span></h1>
+            </div>
 
             <div style={styles.row}>
                 <div style={{...styles.cell, backgroundColor: '#223344'}}>
@@ -38,7 +41,7 @@ const SlideTwo = () => {
     )
 }
 
-const styles = {
+const styles: {[k: string]: CSSProperties} = {
     row: {
         display: 'flex',
         width: '100%',

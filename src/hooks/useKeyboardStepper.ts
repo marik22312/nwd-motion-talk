@@ -10,7 +10,7 @@ export const useKeyboardStepper = (args?: KeyboardNavigationArgs) => {
     const [currentStep, setCurrentStep] = useState(0);
     useEffect(() => {
         const next = () => {
-            if (!args?.steps) {
+            if (args?.steps === undefined) {
                 return setCurrentStep(s => s + 1);
             }
 

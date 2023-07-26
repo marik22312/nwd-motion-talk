@@ -7,7 +7,7 @@ import {useRouter} from "next/router";
 const SlideSix = () => {
     const router = useRouter()
     useKeyboardStepper({
-        steps: 1,
+        steps: 0,
         onEnd: () => router.push('/animatePresence'),
         onBack: () => router.push('/slide5'),
     })

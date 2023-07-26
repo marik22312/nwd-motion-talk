@@ -4,10 +4,11 @@ import {CodeBlock} from "react-code-blocks";
 import {AbsoluteDiv} from "@/components/AbsoluteDiv";
 import {motion} from 'framer-motion'
 import {useKeyboardStepper} from "@/hooks/useKeyboardStepper";
-import {router} from "next/client";
+import { useRouter } from "next/router";
+
 
 const SlideFive = () => {
-
+const router = useRouter();
     const {currentStep} = useKeyboardStepper({
         steps: 1,
         onEnd: () => router.push('/slide6'),
