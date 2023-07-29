@@ -29,7 +29,7 @@ export const FramerLovesNext = () => {
     const router = useRouter()
     useKeyboardStepper({
         steps: 0,
-        onBack: () => router.push('/animatePresence'),
+        onBack: () => router.push('/keyframes'),
         onEnd: () => router.push('/easy-page-transition-title'),
     })
     return (

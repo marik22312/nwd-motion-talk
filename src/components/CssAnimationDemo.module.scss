@@ -1,19 +1,23 @@
 @keyframes opacity {
   0% {
     opacity: 0;
+    rotate: 0;
+    border-radius: 0;
   }
-  25% {
-    opacity: 1;
+  25%, 100% {
+    scale: 2;
+    rotate: 0;
+    border-radius: 0;
   }
   50% {
+    scale: 2;
     rotate: 180deg;
-    opacity: 1;
+    border-radius: 50%;
   }
   75% {
-    rotate: 0;
-  }
-  100% {
-    opacity: 0;
+    scale: 1;
+    rotate: 180deg;
+    border-radius: 50%;
   }
 }
 
@@ -21,5 +25,5 @@
   height: 300px;
   width:300px;
   background-color: #e16971;
-  animation: opacity 3s infinite;
+  animation: opacity 2s infinite ease-in-out;
 }

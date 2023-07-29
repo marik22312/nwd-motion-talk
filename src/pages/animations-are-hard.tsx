@@ -1,8 +1,8 @@
 import React from "react";
 import style from '../components/CssAnimationDemo.module.scss'
-import {CodeBlock} from "react-code-blocks";
+import {CodeBlock} from "@/components/CodeBlock";
 import {AbsoluteDiv} from "@/components/AbsoluteDiv";
-import {motion} from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import {useKeyboardStepper} from "@/hooks/useKeyboardStepper";
 import { useRouter } from "next/router";
 
@@ -34,11 +34,9 @@ const router = useRouter();
                     <CSSAnimationDemo/>
                 </div>
             </div>
-            <motion.div initial={{opacity: 0}} animate={{
-                opacity: currentStep >= 1 ? 1 : 0,
-            }}>
-                <Gift/>
-            </motion.div>
+            <AnimatePresence>
+                {(currentStep >= 1) && <Gift/>}
+            </AnimatePresence>
         </>
     )
 }
@@ -47,15 +45,11 @@ const CSSAnimationDemo: React.FC = () => {
     return (
         <>
             <div style={{
-                width: '50%'
+                width: '50%',
             }}>
                 <CodeBlock
-                    codeBlockStyle={{
-                        width: '50%%',
-                    }}
-                    wrapLongLines={false}
-                    startingLineNumber={0}
-                    text={`@keyframes opacity {
+                    text={`
+@keyframes opacity {
   0% {
     opacity: 0;
   }
@@ -82,9 +76,6 @@ const CSSAnimationDemo: React.FC = () => {
   animation: opacity 3s infinite;
 }`}
                     language={'css'}
-                    theme={{
-                        mode: 'dark',
-                    }}
                 />
             </div>
             <div style={{

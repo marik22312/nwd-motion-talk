@@ -13,7 +13,9 @@ export const AnimatePresenceSlide: React.FC = () => {
         onEnd: () => router.push('/framer-loves-next'),
     })
     return (
-        <div>
+        <div style={{
+            display: 'flex',
+        }}>
             <div>
             <h1>AnimatePresence</h1>
             <p>Animate elements before they're unmounted</p>

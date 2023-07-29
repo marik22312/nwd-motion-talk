@@ -11,7 +11,7 @@ const SlideFive = () => {
     const { currentStep } = useKeyboardStepper({
         steps: 0,
         onBack: () => router.push('/enter-framer-motion'),
-        onEnd: () => router.push('/animatePresence'),
+        onEnd: () => router.push('/framer-loves-next'),
     })
     return (
         <>

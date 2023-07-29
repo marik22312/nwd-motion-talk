@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {CodeBlock, dracula} from "react-code-blocks";
 import {motion} from 'framer-motion'
 import {useKeyboardStepper} from "@/hooks/useKeyboardStepper";
 import {useRouter} from "next/router";
+import {CodeBlock} from "@/components/CodeBlock";
 
 const SlideSix = () => {
     const [x, setX] = useState(0);
@@ -27,7 +27,7 @@ const SlideSix = () => {
                 <div style={{width: '100%', fontSize: 16}}>
                     <CodeBlock
                         text={`
-          const Example: React.FC = () => {
+          const Example = () => {
             const [x, setX] = useState(0);
             const [y, setY] = useState(0);
             const [rotate, setRotate] = useState(0);
@@ -55,11 +55,7 @@ const SlideSix = () => {
                     </div>
                   </div>
             )
-          }`}
-                        language="jsx"
-                        theme={dracula}
-                        startingLineNumber={0}
-                        wrapLongLines={false}/>
+          }`} />?
                 </div>
                 <div style={{
                     width: '50%',
