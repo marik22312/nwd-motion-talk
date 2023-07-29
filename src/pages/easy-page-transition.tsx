@@ -18,6 +18,7 @@ export const EasyPageTransition: React.FC = () => {
     const {currentStep} = useKeyboardStepper({
         steps: 6,
         onBack: () => router.push('/easy-page-transition-title'),
+        onEnd: () => router.push('/summary'),
     })
     return (
         <motion.div
