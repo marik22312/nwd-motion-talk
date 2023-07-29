@@ -34,16 +34,16 @@ export const SummaryPage = () => {
                 width: '50%',
             }}>
                 <SummaryItem bgColor={'#112233'} isVisible={currentStep > 0}>
-                    <h2>UI Animations doesn&apos;t have to be a pain</h2>
+                    <h2>What are UI animations and their use-cases</h2>
                 </SummaryItem>
                 <SummaryItem bgColor={'#223344'} isVisible={currentStep > 1}>
-                    <h2>`motion` components makes animations easy</h2>
+                    <h2>Types of animations</h2>
                 </SummaryItem>
                 <SummaryItem bgColor={'#334455'} isVisible={currentStep > 2}>
-                    <h2>`AnimatePresence` helps with page transitions</h2>
+                    <h2>Easy animations with framer-motion</h2>
                 </SummaryItem>
                 <SummaryItem bgColor={'#445566'} isVisible={currentStep > 3}>
-                    <h2>I don't like CSS!</h2>
+                    <h2>Easy page transitions in Next.js</h2>
                 </SummaryItem>
             </div>
         </motion.div>
