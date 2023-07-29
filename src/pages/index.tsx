@@ -14,7 +14,7 @@ export default function Home() {
   const router = useRouter();
   useKeyboardNavigation({
     steps: [
-      () => router.push('/slide1'),
+      () => router.push('/who-am-i'),
     ]
   });
   return (
@@ -38,7 +38,7 @@ export default function Home() {
         <h2>The tale of the animated page transition</h2>
         </div>
         <div>
-          <Link href="/slide1">Next</Link>
+          <Link href="/who-am-i">Next</Link>
         </div>
       </div>
     </motion.div>

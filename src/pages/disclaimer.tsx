@@ -2,14 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useKeyboardNavigation } from '@/hooks/useKeyboardNavigation';
 import { useRouter } from 'next/router';
+import {useKeyboardStepper} from "@/hooks/useKeyboardStepper";
 
 const SlideTwo = () => {
     const router = useRouter();
-    useKeyboardNavigation({
-        steps: [
-            () => router.push('/learn'),
-        ]
-    });
+    useKeyboardStepper({
+        steps: 0,
+        onEnd: () => router.push('/learn'),
+        onBack: () => router.push('/title'),
+    })
     return (
         <motion.div
         style={{

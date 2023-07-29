@@ -8,22 +8,17 @@ import { StyledImage } from "@/components/StyledImage";
 import { AbsoluteDiv } from "@/components/AbsoluteDiv";
 import { useKeyboardNavigation } from "@/hooks/useKeyboardNavigation";
 import { useRouter } from "next/router";
+import {useKeyboardStepper} from "@/hooks/useKeyboardStepper";
 
 const SlideOne: React.FC = () => {
   const router = useRouter();
 
-  const [jobOpacity, setJobOpacity] = useState(0);
-  const [radioOpacity, setRadioOpacity] = useState(0);
-  const [dogOpacity, setDogOpacity] = useState(0);
 
-  useKeyboardNavigation({
-    steps: [
-      () => setJobOpacity(1),
-      () => setRadioOpacity(1),
-      () => setDogOpacity(1),
-    ],
-    onEnd: () => router.push('/slide2'),
-  });
+  const {currentStep} = useKeyboardStepper({
+    steps: 3,
+    onEnd: () => router.push('/title'),
+  })
+
   return (
     <motion.div style={{
       position: 'relative',
@@ -39,7 +34,7 @@ const SlideOne: React.FC = () => {
         left: '150px',
       }}>
         <h1>Hi! I'm Marik</h1>
-        <motion.h2 animate={{opacity: jobOpacity}}>Senior Software Developer @ Melio</motion.h2>
+        <motion.h2 animate={{opacity: currentStep > 0 ? 1 : 0}}>Senior Software Developer @ Melio</motion.h2>
       </motion.div>
       <motion.div
       initial={{opacity: 0}}
@@ -57,7 +52,7 @@ const SlideOne: React.FC = () => {
       </motion.div>
       <motion.div
       initial={{opacity: 0}} animate={{
-        opacity: jobOpacity
+        opacity: currentStep > 0 ? 1 : 0
       }}>
         <AbsoluteDiv top="250px" left="150px" width="300px">
           <StyledImage src={MelioImage} alt="melio" />
@@ -65,7 +60,7 @@ const SlideOne: React.FC = () => {
       </motion.div>
       <motion.div
       initial={{opacity: 0}} animate={{
-        opacity: radioOpacity
+        opacity: currentStep > 1 ? 1 : 0
       }}>
         <AbsoluteDiv top="400px" left="150px" width="300px">
           <StyledImage src={RadiosavtaLogo} alt="radiosavta" />
@@ -73,7 +68,7 @@ const SlideOne: React.FC = () => {
       </motion.div>
       <motion.div
       initial={{opacity: 0}} animate={{
-        opacity: dogOpacity
+        opacity: currentStep > 2 ? 1 : 0
       }}>
         <AbsoluteDiv top={'260px'} left="700px" width="400px">
           <StyledImage src={LycheeImage} alt="Lychee" />

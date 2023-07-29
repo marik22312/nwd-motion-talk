@@ -5,12 +5,12 @@ import {StyledImage} from "@/components/StyledImage";
 import TwitterLike from "@/assets/images/twitter.gif";
 import AnimationGif from "@/assets/images/animation.gif";
 
-const Slide4 = () => {
+const AnimationTypes = () => {
     const router = useRouter();
     const { currentStep } = useKeyboardStepper({
         steps: 2,
-        onEnd: () => router.push('/slide5'),
-        onBack: () => router.push('/slide3'),
+        onEnd: () => router.push('/animations-are-hard'),
+        onBack: () => router.push('/what-are-animations'),
     });
     return (
         <div style={{
@@ -64,4 +64,4 @@ const Slide4 = () => {
     )
 }
 
-export default Slide4;
+export default AnimationTypes;

@@ -10,6 +10,7 @@ const SlideFive = () => {
     const router = useRouter();
     const { currentStep } = useKeyboardStepper({
         steps: 0,
+        onBack: () => router.push('/enter-framer-motion'),
         onEnd: () => router.push('/animatePresence'),
     })
     return (

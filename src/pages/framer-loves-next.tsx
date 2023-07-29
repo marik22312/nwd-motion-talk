@@ -1,6 +1,13 @@
 import { useKeyboardStepper } from "@/hooks/useKeyboardStepper";
 import { useRouter } from "next/router";
 import { motion } from 'framer-motion';
+import {CSSProperties} from "react";
+
+const style: CSSProperties = {
+    strokeWidth: '10px',
+    strokeLinecap: 'round',
+    fill: 'transparent'
+}
 
 const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -20,10 +27,10 @@ const draw = {
 
 export const FramerLovesNext = () => {
     const router = useRouter()
-    const { currentStep } = useKeyboardStepper({
-        steps: 1,
+    useKeyboardStepper({
+        steps: 0,
         onBack: () => router.push('/animatePresence'),
-        onEnd: () => router.push('/404'),
+        onEnd: () => router.push('/easy-page-transition-title'),
     })
     return (
         <div>
@@ -31,27 +38,20 @@ export const FramerLovesNext = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                height: '100vh',
             }}>
-            <h1>Framer
+            <h1>Framer<span style={{
+                margin: '0 30px'
+            }}>
             <motion.svg 
                 width="100"
                 height="100"
-                // viewBox="0 0 600 600"
-                initial={{
-                    pathLength: 0,
-                    opacity: 0,
-                }}
-                // animate={{
-                //     pathLength: [0, 1],
-                // }}
-                // transition={{
-                //     duration: '3s',
-                //     ease: "easeInOut",
-                //     repeat: Infinity,
-                // }}
-                animate={currentStep >= 1 ? 'visible' : 'hidden'}
+                initial={'hidden'}
+                animate={'visible'}
+
                 >
                 <motion.path
+                    style={style}
                     d="M 10 30 A 20 20 0 0 1 50 30 A 20 20 0 0 1 90 30 Q 90 60 50 90 Q 9 61 10 30 Z"
                     fill="transparent"
                     stroke="red"
@@ -59,9 +59,9 @@ export const FramerLovesNext = () => {
                     variants={draw}
                 />
             </motion.svg>
+                </span>
             Next</h1>
             </div>
-            <p>Let's build a simple page transition</p>
         </div>
     )
 }
